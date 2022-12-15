@@ -1,5 +1,6 @@
 import { styled } from "../styles";
 import Head from "next/head";
+import { Header } from "../components/Header";
 
 const Title = styled("h1", {
   color: "$white",
@@ -13,6 +14,7 @@ export default function Home() {
         <title>IgNews</title>
       </Head>
       <Title>Hello world</Title>
+      <Header />
     </>
   );
 }
