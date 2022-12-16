@@ -1,6 +1,7 @@
 import { styled } from "@stitches/react";
 import Image from "next/image";
 import logo from "../../../public/images/logo.svg";
+import { SignInButton } from "../SignInButton";
 
 export const HeaderContainer = styled("header", {
   div: {},
@@ -17,6 +18,10 @@ const HeaderContent = styled("div", {
   display: "flex",
   alignItems: "center",
 
+  button: {
+    marginLeft: "auto",
+  },
+
   nav: {
     marginLeft: "5rem",
     height: "5rem",
@@ -24,6 +29,12 @@ const HeaderContent = styled("div", {
     ul: {
       display: "flex",
       listStyle: "none",
+
+      li: {
+        "& + li": {
+          marginLeft: "2rem",
+        },
+      },
     },
 
     a: {
@@ -38,17 +49,13 @@ const HeaderContent = styled("div", {
         color: "$white",
       },
 
-      "& + a": {
-        marginLeft: "2rem",
-      },
-
       "&.isActive::after": {
         content: "",
         height: "3px",
         borderRadius: "3px 3px 0 0",
         width: "100%",
         position: "absolute",
-        botton: "0",
+        bottom: "0",
         left: "0",
         background: "$yellow500",
       },
@@ -72,10 +79,11 @@ export function Header() {
               <a className="isActive">Home</a>
             </li>
             <li>
-              <a className="isActive">Posts</a>
+              <a>Posts</a>
             </li>
           </ul>
         </nav>
+        <SignInButton />
       </HeaderContent>
     </HeaderContainer>
   );
